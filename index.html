@@ -61,6 +61,10 @@
 
           <label for="address">Address:</label>
           <textarea id="address" rows="3" required></textarea>
+          <label for="contact">Contact No.:</label>
+          <input type="tel" id="contact" pattern="[0-9]{10}">
+
+       
         </div>
         
         <div class="photo-box">
@@ -79,6 +83,9 @@
 
           <label for="health">Health Issues (if any):</label>
           <input type="text" id="health">
+
+          <label for="doj">Date of joining:</label>
+          <input type="date" name="" id="">
         </div>
       </div>
 
@@ -87,15 +94,19 @@
         <option value="" disabled selected>Select Class Type</option>
         <option value="Online">Online</option>
         <option value="Offline">Offline</option>
+        <option value="hometution">Home-tution</option>
+        <option value="event">Wedding/Coorporate Event</option>
       </select>
 
       <label for="coursetype">Course Type:</label>
       <select name="coursetype" id="coursetype" required>
         <option value="" disabled selected>Select Course</option>
-        <option value="Zumba">Zumba</option>
-        <option value="Fitness">Fitness</option>
+        <option value="Instruments">Instruments</option>
+        <option value="Aerobics">Fitness</option>
         <option value="Yoga">Yoga</option>
-        <option value="SemiClassical">Semi Classical</option>
+        <option value="Dance">Dance</option>
+        <option value="vocal">Vocal</option>
+        <option value="tution">Tution</option>
       </select>
 
       <label for="batchtiming">Batch Timing:</label>
@@ -108,7 +119,9 @@
       <select name="feetype" id="feetype" required>
         <option value="" disabled selected>Select Fees Type</option>
         <option value="Monthly">Monthly</option>
-        <option value="Package">Package</option>
+        <option value="Package">3-Month Package</option>
+        <option value="Package">6-Month Package</option>
+        <option value="Package">12-Month Package</option>
       </select>
 
       

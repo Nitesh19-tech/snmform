@@ -51,7 +51,7 @@ body {
 .details-box, .photo-box {
   width: 48%;
   border: 1px solid #ccc;
-  padding: 15px;
+  padding: 25px;
   border-radius: 5px;
   background: #fdfdfd;
 }
