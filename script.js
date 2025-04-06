@@ -1,22 +1,23 @@
-document.getElementById('photo').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const preview = document.getElementById('photo-preview');
-            preview.innerHTML = `<img src="${e.target.result}" alt="Uploaded Photo">`;
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-document.getElementById('generate-pdf').addEventListener('click', function() {
+document.getElementById('generate-pdf').addEventListener('click', function () {
     const form = document.getElementById('form-container');
-    html2canvas(form).then(canvas => {
+
+    // Scroll to top before capture
+    window.scrollTo(0, 0);
+
+    html2canvas(form, {
+        scale: 2,        // High resolution
+        useCORS: true,   // In case of images
+        windowWidth: 794 // Force width for mobile
+    }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const { jsPDF } = window.jspdf;
         const pdf = new jsPDF('p', 'mm', 'a4');
-        pdf.addImage(imgData, 'PNG', 10, 10, 190, 277);
-        pdf.save('registration-form.pdf');
+
+        const pdfWidth = 210;
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('registration_form.pdf');
     });
 });

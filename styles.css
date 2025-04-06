@@ -121,3 +121,60 @@ input, select {
   margin-top: 15px;
   border-top: 2px solid #000;
 }
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .container {
+    width: 794px; /* 210mm */
+    max-width: none;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: none;
+    background: white;
+    page-break-after: always;
+  }
+
+  .form-row {
+    flex-wrap: nowrap;
+  }
+
+  .details-box, .photo-box {
+    width: 48%;
+    page-break-inside: avoid;
+  }
+
+  .submit-btn {
+    display: none;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+.container {
+  width: 794px; /* Exact A4 width in px @96dpi */
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* For consistent layout on small screen when exporting PDF */
+@media screen and (max-width: 800px) {
+  html, body {
+    overflow-x: auto;
+  }
+
+  .container {
+    width: 794px;
+  }
+}
