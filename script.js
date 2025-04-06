@@ -44,3 +44,9 @@ document.getElementById('generate-pdf').addEventListener('click', function () {
         document.body.removeChild(clonedForm);
     });
 });
+html2canvas(element, {
+    scrollY: -window.scrollY
+  }).then(canvas => {
+    // Canvas ko PDF mein convert karo
+  });
+  

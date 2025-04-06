@@ -176,6 +176,7 @@ input, select {
 
   .container {
       width: 794px !important; /* Force A4 width */
+      margin: 0 auto;
     }
    
   }
