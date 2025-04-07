@@ -10,14 +10,13 @@ body {
 }
 
 .container {
-  width: 794px; /* A4 width at 96dpi */
+  width: 794px; /* A4 width */
   margin: 20px auto;
   background: #fff;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 🎯 Header Style Fix */
 .header {
   display: flex;
   justify-content: space-between;
@@ -46,29 +45,25 @@ body {
   font-weight: bold;
 }
 
-.registration h1 {
-  text-align: center;
-  margin: 20px 0;
-}
-
 .form-row {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .details-box, .photo-box {
   width: 48%;
   border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 15px;
   background: #fdfdfd;
+  border-radius: 5px;
 }
 
 label {
-  display: block;
-  margin-top: 10px;
   font-weight: bold;
+  margin-top: 10px;
+  display: block;
 }
 
 input, select, textarea {
@@ -76,8 +71,8 @@ input, select, textarea {
   padding: 8px;
   margin-top: 5px;
   font-size: 14px;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 textarea {
@@ -89,8 +84,8 @@ textarea {
   height: 150px;
   margin-top: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -107,8 +102,8 @@ textarea {
   padding: 12px;
   font-size: 16px;
   border-radius: 5px;
-  cursor: pointer;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .submit-btn:hover {
@@ -117,20 +112,16 @@ textarea {
 
 .footer {
   text-align: center;
-  margin-top: 20px;
+  font-weight: bold;
   border-top: 2px solid #000;
   padding-top: 10px;
-  font-weight: bold;
+  margin-top: 20px;
 }
 
-/* 📱 Mobile Fix for html2canvas */
+/* 📱 Mobile PDF Fix */
 @media screen and (max-width: 800px) {
   html, body {
     width: 794px;
     overflow-x: auto;
-  }
-
-  .container {
-    width: 794px !important;
   }
 }

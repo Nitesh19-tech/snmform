@@ -1,20 +1,19 @@
-// 📸 Photo Upload Preview
+// 📸 Photo Preview
 document.getElementById('photo').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            const preview = document.getElementById('photo-preview');
-            preview.innerHTML = `<img src="${e.target.result}" alt="Uploaded Photo">`;
+            document.getElementById('photo-preview').innerHTML = `<img src="${e.target.result}" alt="Uploaded Photo">`;
         };
         reader.readAsDataURL(file);
     }
 });
 
-// 📄 Generate PDF (with full scroll support)
-document.getElementById('generate-pdf').addEventListener('click', function () {
+// 📄 Full-page PDF Generation
+document.getElementById('generate-pdf').addEventListener('click', () => {
     const form = document.getElementById('form-container');
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // Scroll to top
 
     setTimeout(() => {
         html2canvas(form, {
