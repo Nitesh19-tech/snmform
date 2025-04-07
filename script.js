@@ -11,17 +11,16 @@ document.getElementById('photo').addEventListener('change', function(event) {
     }
 });
 
-// 📄 Generate PDF (Full Page on Mobile too)
+// 📄 Generate PDF (with full scroll support)
 document.getElementById('generate-pdf').addEventListener('click', function () {
     const form = document.getElementById('form-container');
-    window.scrollTo(0, 0); // Scroll to top (important for mobile)
+    window.scrollTo(0, 0);
 
-    // Give time for scroll + layout to adjust
     setTimeout(() => {
         html2canvas(form, {
             scale: 2,
             useCORS: true,
-            scrollY: 0 // fix mobile issues
+            scrollY: 0
         }).then(canvas => {
             const imgData = canvas.toDataURL('image/png');
             const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
