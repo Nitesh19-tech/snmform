@@ -1,101 +1,67 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #f8f9fa;
 }
 
 .container {
-  width: 794px;
-  max-width: 100%;
-  margin: 20px auto;
-  background: #fff;
+  width: 794px; /* A4 width at 96dpi */
   padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header, .footer {
   text-align: center;
-  padding: 10px 0;
-  border-bottom: 2px solid #000;
+  margin-bottom: 20px;
 }
 
 .logo img {
   height: 80px;
 }
 
-.address {
-  text-align: center;
-  flex-grow: 1;
-}
-
-.academy-name {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.registration h1 {
-  text-align: center;
-}
-
 .form-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   gap: 20px;
-  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.details-box,
-.photo-box {
+.details-box, .photo-box {
   width: 48%;
   border: 1px solid #ccc;
-  padding: 25px;
-  border-radius: 5px;
+  padding: 20px;
   background: #fdfdfd;
-}
-
-textarea {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  margin-top: 5px;
-  resize: none;
 }
 
 label {
-  font-size: 14px;
-  font-weight: bold;
   display: block;
   margin-top: 10px;
+  font-weight: bold;
 }
 
-input,
-select {
+input, select, textarea {
   width: 100%;
   padding: 8px;
+  margin-top: 5px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-top: 5px;
 }
 
 .photo-preview {
   width: 100%;
   height: 150px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
   overflow: hidden;
 }
 
@@ -109,41 +75,23 @@ select {
   background: #007bff;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .submit-btn:hover {
-  background: #0056b3;
+  background-color: #0056b3;
 }
 
-.footer {
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px;
-  margin-top: 15px;
-  border-top: 2px solid #000;
-}
-
+/* Force A4 width on mobile for html2canvas */
 @media screen and (max-width: 800px) {
   html, body {
+    width: 794px;
     overflow-x: auto;
   }
-
-  .container {
-    width: 794px !important;
-  }
-}
-
-@media print {
-  body {
-    -webkit-print-color-adjust: exact !important;
-  }
-
   .container {
     width: 794px !important;
   }
